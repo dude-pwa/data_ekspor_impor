@@ -13,4 +13,8 @@ class Country extends Model
     public function exports(){
     	return $this->hasMany('App\Export');
     }
+
+    public function imports(){
+    	return $this->hasMany('App\Import');
+    }
 }

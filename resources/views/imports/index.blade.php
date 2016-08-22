@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="panel panel-success">
-		<h1 class="panel-heading">Daftar Export</h1>
+		<h1 class="panel-heading">Daftar Import</h1>
 		<table class="table table-striped">
 			<tr>
 				<th class="col-md-1">No.</th>
@@ -19,16 +19,16 @@
 				<th colspan="2" class="center">Action</th>
 			</tr>
 			<?php $i = 1; ?>
-			@while($i <= $exports->count())
-				@foreach($exports as $export)
+			@while($i <= $imports->count())
+				@foreach($imports as $import)
 					<?php
-						$item = $export->item()->first();
-						$country = $export->country()->first();
-						$harbor = $export->harbor()->first();
+						$item = $import->item()->first();
+						$country = $import->country()->first();
+						$harbor = $import->harbor()->first();
 					?>
 					<tr class="small">
 						<td>{{$i}}</td>
-						<td>{{ strtoupper(date('F d, Y', strtotime($export->date))) }}</td>
+						<td>{{ strtoupper(date('F d, Y', strtotime($import->date))) }}</td>
 						<td>{{ strtoupper($item->hsxcode) }}</td>
 						<td>{{ strtoupper($item->desc) }}</td>
 						<td>{{ strtoupper($item->sitc8code) }}</td>
@@ -36,13 +36,13 @@
 						<td>{{ strtoupper($country->ctrydescen) }}</td>
 						<td>{{ strtoupper($harbor->pod) }}</td>
 						<td>{{ strtoupper($harbor->podname) }}</td>
-						<td>{{ strtoupper($export->netwt) }}</td>
-						<td>{{ strtoupper($export->value) }}</td>
+						<td>{{ strtoupper($import->netwt) }}</td>
+						<td>{{ strtoupper($import->value) }}</td>
 						<td class="col-md-1" align="right">
-							<a href="/exports/{{$export->id}}/edit" class="btn btn-xs btn-info">Edit</a> 
+							<a href="/imports/{{$import->id}}/edit" class="btn btn-xs btn-info">Edit</a> 
 						</td>
 						<td class="col-md-1" align="left">
-							{!! Form::open(['method'=>'delete', 'route'=>['exports.destroy', $export->id]]) !!}
+							{!! Form::open(['method'=>'delete', 'route'=>['imports.destroy', $import->id]]) !!}
 							{!! Form::submit('Delete', ['class'=>'btn btn-xs btn-danger']) !!}
 							{!!Form::close()!!}
 						</td>
@@ -54,11 +54,11 @@
 
 		<br>
 		<div class="center">
-			{{$exports->links()}}
+			{{$imports->links()}}
 		</div>
 	</div>
 	<br>
-	<a href="/exports/create" class="btn btn-primary">Tambah Daftar Export</a>
+	<a href="/imports/create" class="btn btn-primary">Tambah Daftar Export</a>
 	<br><br>
 @endsection
 

@@ -4,23 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\ExportRequest;
-use App\Export;
+use App\Http\Requests\ImportRequest;
+use App\Import;
 use App\Country;
 use App\Harbor;
 use App\Item;
 use Session;
 
-class ExportsController extends Controller
+class ImportsController extends Controller
 {
     public function index()
     {
         // $item = Item::all();
         // $country = Country::all();
         // $harbor = Harbor::all();
-        $exports = Export::orderBy('date');
-        $exports = $exports->paginate();
-        return view('exports.index', compact('exports'));
+        $imports = Import::orderBy('date');
+        $imports = $imports->paginate();
+        return view('imports.index', compact('imports'));
     }
 
     /**
@@ -33,7 +33,7 @@ class ExportsController extends Controller
         $country = Country::orderBy('ctrydescen')->lists('ctrydescen', 'id');
         $item = Item::orderBy('desc')->lists('desc', 'id');
         $harbor = Harbor::orderBy('podname')->lists('podname', 'id');
-        return view('exports.create', compact('country', 'item', 'harbor'));
+        return view('imports.create', compact('country', 'item', 'harbor'));
     }
 
     /**
@@ -42,12 +42,12 @@ class ExportsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ExportRequest $request)
+    public function store(ImportRequest $request)
     {
-        Export::create($request->all());
+        Import::create($request->all());
 
-        Session::flash('message', 'Berhasil menambah data Ekspor!');
-        return redirect('exports');
+        Session::flash('message', 'Berhasil menambah data Import!');
+        return redirect('imports');
     }
 
     /**
@@ -69,11 +69,11 @@ class ExportsController extends Controller
      */
     public function edit($id)
     {
-        $export = Export::findOrFail($id);
+        $import = Import::findOrFail($id);
         $country = Country::orderBy('ctrydescen')->lists('ctrydescen', 'id');
         $item = Item::orderBy('desc')->lists('desc', 'id');
         $harbor = Harbor::orderBy('podname')->lists('podname', 'id');
-        return view('exports.edit', compact('export', 'country', 'item', 'harbor'));
+        return view('imports.edit', compact('export', 'country', 'item', 'harbor'));
     }
 
     /**
@@ -83,13 +83,13 @@ class ExportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ExportRequest $request, $id)
+    public function update(ImportRequest $request, $id)
     {
-        $export = Export::findOrFail($id);
-        $export->update($request->all());
+        $import = Import::findOrFail($id);
+        $import->update($request->all());
 
-        Session::flash('message', 'Data Export berhasil di rubah!');
-        return redirect('exports');
+        Session::flash('message', 'Data Import berhasil di rubah!');
+        return redirect('imports');
     }
 
     /**
@@ -100,10 +100,10 @@ class ExportsController extends Controller
      */
     public function destroy($id)
     {
-        $export = Export::findOrFail($id);
-        $export->delete();
+        $import = Import::findOrFail($id);
+        $import->delete();
 
-        Session::flash('message', 'Data Export berhasil di hapus!');
-        return redirect('exports');
+        Session::flash('message', 'Data Import berhasil di hapus!');
+        return redirect('imports');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExportsTable extends Migration
+class CreateImportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateExportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('exports', function (Blueprint $table) {
+        Schema::create('imports', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('country_id')->unsigned();
             $table->integer('harbor_id')->unsigned();
@@ -46,6 +46,6 @@ class CreateExportsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('exports');
+        Schema::drop('imports');
     }
 }
