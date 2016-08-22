@@ -28,7 +28,7 @@
 					?>
 					<tr class="small">
 						<td>{{$i}}</td>
-						<td>{{ strtoupper($export->date) }}</td>
+						<td>{{ strtoupper(date('F d, Y', strtotime($export->date))) }}</td>
 						<td>{{ strtoupper($item->hsxcode) }}</td>
 						<td>{{ strtoupper($item->desc) }}</td>
 						<td>{{ strtoupper($item->sitc8code) }}</td>
