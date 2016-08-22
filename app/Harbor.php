@@ -9,4 +9,8 @@ class Harbor extends Model
     protected $fillable = [
     	'pod', 'podname'
     ];
+
+    public function exports(){
+    	return $this->hasMany('App\Export');
+    }
 }

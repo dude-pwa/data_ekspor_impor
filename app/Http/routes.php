@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::resource('countries', 'CountriesController');
 Route::resource('harbor', 'HarborsController');
+Route::resource('items', 'ItemsController');
+Route::resource('exports', 'ExportsController');

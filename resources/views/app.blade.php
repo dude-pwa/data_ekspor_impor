@@ -20,6 +20,8 @@
 	      <ul class="nav navbar-nav">
 	        <li><a href="/countries">Daftar Negara</a></li>
 	        <li><a href="/harbor">Daftar Pelabuhan</a></li>
+	        <li><a href="/items">Daftar Item</a></li>
+	        <li><a href="/exports">Daftar Export</a></li>
 	        <li class="dropdown">
 	          {{-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
 	          <ul class="dropdown-menu">

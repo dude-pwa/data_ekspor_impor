@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Item extends Model
 {
     protected $fillable = [
-    	'destctry', 'ctrydescen'
+    	'hsxcode', 'desc', 'sitc8code'
     ];
 
     public function exports(){

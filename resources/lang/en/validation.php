@@ -113,6 +113,22 @@ return [
         'podname' => [
             'required' => 'Nama Pelabuhan harus di isi',
         ],
+
+        'hsxcode' => [
+            'unique' => 'Kode HS sudah terdaftar',
+            'required' => 'Kode HS harus di isi',
+            'min' => 'Kode HS harus 10 digit',
+            'max' => 'Kode HS harus 10 digit',
+        ],
+        'desc' => [
+            'required' => 'Deskripsi Item harus di isi',
+        ],
+        'sitc8code' => [
+            'unique' => 'Kode SITC sudah terdaftar',
+            'required' => 'Kode SITC harus di isi',
+            'min' => 'Kode SITC harus 8 digit',
+            'max' => 'Kode SITC harus 8 digit',
+        ],
     ],
 
     /*
