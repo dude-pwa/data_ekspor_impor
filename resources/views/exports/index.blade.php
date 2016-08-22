@@ -26,7 +26,7 @@
 						$country = $export->country()->first();
 						$harbor = $export->harbor()->first();
 					?>
-					<tr>
+					<tr class="small">
 						<td>{{$i}}</td>
 						<td>{{ strtoupper($export->date) }}</td>
 						<td>{{ strtoupper($item->hsxcode) }}</td>
