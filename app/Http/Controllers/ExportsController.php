@@ -30,9 +30,9 @@ class ExportsController extends Controller
      */
     public function create()
     {
-        $country = Country::lists('ctrydescen', 'id');
-        $item = Item::lists('desc', 'id');
-        $harbor = Harbor::lists('podname', 'id');
+        $country = Country::orderBy('ctrydescen')->lists('ctrydescen', 'id');
+        $item = Item::orderBy('desc')->lists('desc', 'id');
+        $harbor = Harbor::orderBy('podname')->lists('podname', 'id');
         return view('exports.create', compact('country', 'item', 'harbor'));
     }
 
@@ -70,9 +70,9 @@ class ExportsController extends Controller
     public function edit($id)
     {
         $export = Export::findOrFail($id);
-        $country = Country::lists('ctrydescen', 'id');
-        $item = Item::lists('desc', 'id');
-        $harbor = Harbor::lists('podname', 'id');
+        $country = Country::orderBy('ctrydescen')->lists('ctrydescen', 'id');
+        $item = Item::orderBy('desc')->lists('desc', 'id');
+        $harbor = Harbor::orderBy('podname')->lists('podname', 'id');
         return view('exports.edit', compact('export', 'country', 'item', 'harbor'));
     }
 
