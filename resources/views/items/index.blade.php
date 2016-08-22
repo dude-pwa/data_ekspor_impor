@@ -18,7 +18,7 @@
 						<td>{{$i}}</td>
 						<td>{{ strtoupper($item->hsxcode) }}</td>
 						<td>{{ strtoupper($item->desc) }}</td>
-						<td>{{ strtoupper($item->sitc8digit) }}</td>
+						<td>{{ strtoupper($item->sitc8code) }}</td>
 						<td class="col-md-1" align="right">
 							<a href="/items/{{$item->id}}/edit" class="btn btn-xs btn-info">Edit</a> 
 						</td>
