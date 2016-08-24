@@ -13,12 +13,26 @@ use Session;
 
 class ExportsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // $item = Item::all();
         // $country = Country::all();
         // $harbor = Harbor::all();
         $exports = Export::orderBy('date', 'desc');
+        $sort = $request->get('sort');
+        if($sort =='date_asc'){
+            $exports = Export::orderBy('date', 'asc');
+        }else if($sort =='date_desc'){
+            $exports = Export::orderBy('date', 'desc');
+        }else if($sort =='netwt_asc'){
+            $exports = Export::orderBy('netwt', 'asc');
+        }else if($sort =='netwt_desc'){
+            $exports = Export::orderBy('netwt', 'desc');
+        }else if($sort =='value_asc'){
+            $exports = Export::orderBy('value', 'asc');
+        }else if($sort =='value_desc'){
+            $exports = Export::orderBy('value', 'desc');
+        }
         $exports = $exports->paginate();
         return view('exports.index', compact('exports'));
     }

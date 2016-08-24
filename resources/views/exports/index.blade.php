@@ -2,7 +2,68 @@
 
 @section('content')
 	<div class="panel panel-success">
-		<h1 class="panel-heading">Daftar Export</h1>
+	<div class="panel-heading">
+		<h1>Daftar Export</h1>
+
+		<div class="row">
+
+		{{-- start fungsi sort --}}
+			<p class="col-md-4">
+				Urut Berdasarkan: 
+
+				<select id="sort">
+					<option disabled selected> -- select an option -- </option>
+					<option value="{{route('sort_exports', ['sort'=>'date_desc'])}}">Tanggal (Terbaru)</option>
+					<option value="{{route('sort_exports', ['sort'=>'date_asc'])}}">Tanggal (Terlama)</option>
+					<option value="{{route('sort_exports', ['sort'=>'netwt_asc'])}}">Berat Bersih (Terkecil)</option>
+					<option value="{{route('sort_exports', ['sort'=>'netwt_desc'])}}">Berat Bersih (Terbesar)</option>
+					<option value="{{route('sort_exports', ['sort'=>'value_asc'])}}">Value (Terkecil)</option>
+					<option value="{{route('sort_exports', ['sort'=>'value_desc'])}}">Value (Terbesar)</option>
+				</select>
+				
+				<script type="text/javascript">
+				 var urlmenu = document.getElementById( 'sort' );
+				 urlmenu.onchange = function() {
+				   window.open( this.options[ this.selectedIndex ].value, '_self');
+				 };
+				</script>
+				
+				<script>
+					var getUrlParameter = function getUrlParameter(sParam) {
+					    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+					        sURLVariables = sPageURL.split('&'),
+					        sParameterName,
+					        i;
+
+					    for (i = 0; i < sURLVariables.length; i++) {
+					        sParameterName = sURLVariables[i].split('=');
+
+					        if (sParameterName[0] === sParam) {
+					            return sParameterName[1] === undefined ? true : sParameterName[1];
+					        }
+					    }
+					};
+
+					var sort_select = getUrlParameter('sort');
+					if(sort_select == 'date_asc'){
+						$("#sort")[0].selectedIndex = 2;
+					}else if(sort_select == 'date_desc'){
+						$("#sort")[0].selectedIndex = 1;
+					}else if(sort_select == 'netwt_asc'){
+						$("#sort")[0].selectedIndex = 3;
+					}else if(sort_select == 'netwt_desc'){
+						$("#sort")[0].selectedIndex = 4;
+					}else if(sort_select == 'value_asc'){
+						$("#sort")[0].selectedIndex = 5;
+					}else if(sort_select == 'value_desc'){
+						$("#sort")[0].selectedIndex = 6;
+					}
+				</script>
+			</p>
+
+			{{-- end fungsi sort --}}
+		</div>
+	</div>
 		<table class="table table-striped">
 			<tr>
 				<th class="col-md-1">No.</th>

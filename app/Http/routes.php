@@ -20,3 +20,8 @@ Route::resource('harbor', 'HarborsController');
 Route::resource('items', 'ItemsController');
 Route::resource('exports', 'ExportsController');
 Route::resource('imports', 'ImportsController');
+
+Route::get('/exports?sort={sort}', [
+	'uses'=>'ExportsController@index',
+	'as'=>'sort_exports'
+]);
