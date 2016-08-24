@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Sistem Informasi Perpustakaan</title>
+	<title>Data Ekspor dan Impor</title>
 	<link rel="stylesheet" href="{{ URL::to('/src/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{URL::to('/src/css/custom.css')}}">
 	<script src="{{URL::to('/src/js/bootstrap.min.js')}}"></script>

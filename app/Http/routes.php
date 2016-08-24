@@ -25,3 +25,8 @@ Route::get('/exports?sort={sort}', [
 	'uses'=>'ExportsController@index',
 	'as'=>'sort_exports'
 ]);
+
+Route::get('/imports?sort={sort}', [
+	'uses'=>'ImportsController@index',
+	'as'=>'sort_imports'
+]);

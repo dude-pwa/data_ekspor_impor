@@ -13,12 +13,26 @@ use Session;
 
 class ImportsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // $item = Item::all();
         // $country = Country::all();
         // $harbor = Harbor::all();
         $imports = Import::orderBy('date', 'desc');
+        $sort = $request->get('sort');
+        if($sort =='date_asc'){
+            $imports = Import::orderBy('date', 'asc');
+        }else if($sort =='date_desc'){
+            $imports = Import::orderBy('date', 'desc');
+        }else if($sort =='netwt_asc'){
+            $imports = Import::orderBy('netwt', 'asc');
+        }else if($sort =='netwt_desc'){
+            $imports = Import::orderBy('netwt', 'desc');
+        }else if($sort =='value_asc'){
+            $imports = Import::orderBy('value', 'asc');
+        }else if($sort =='value_desc'){
+            $imports = Import::orderBy('value', 'desc');
+        }
         $imports = $imports->paginate();
         return view('imports.index', compact('imports'));
     }
