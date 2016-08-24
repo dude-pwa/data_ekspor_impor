@@ -18,7 +18,7 @@ class ExportsController extends Controller
         // $item = Item::all();
         // $country = Country::all();
         // $harbor = Harbor::all();
-        $exports = Export::orderBy('date');
+        $exports = Export::orderBy('date', 'desc');
         $exports = $exports->paginate();
         return view('exports.index', compact('exports'));
     }
@@ -73,7 +73,11 @@ class ExportsController extends Controller
         $country = Country::orderBy('ctrydescen')->lists('ctrydescen', 'id');
         $item = Item::orderBy('desc')->lists('desc', 'id');
         $harbor = Harbor::orderBy('podname')->lists('podname', 'id');
-        return view('exports.edit', compact('export', 'country', 'item', 'harbor'));
+
+        $getItem = Item::findOrFail($export->id);
+        $getCountry = Country::findOrFail($export->id);
+        $getHarbor = Harbor::findOrFail($export->id);
+        return view('exports.edit', compact('export', 'country', 'item', 'harbor', 'getItem', 'getCountry', 'getHarbor'));
     }
 
     /**

@@ -18,7 +18,7 @@ class ImportsController extends Controller
         // $item = Item::all();
         // $country = Country::all();
         // $harbor = Harbor::all();
-        $imports = Import::orderBy('date');
+        $imports = Import::orderBy('date', 'desc');
         $imports = $imports->paginate();
         return view('imports.index', compact('imports'));
     }
@@ -73,7 +73,11 @@ class ImportsController extends Controller
         $country = Country::orderBy('ctrydescen')->lists('ctrydescen', 'id');
         $item = Item::orderBy('desc')->lists('desc', 'id');
         $harbor = Harbor::orderBy('podname')->lists('podname', 'id');
-        return view('imports.edit', compact('export', 'country', 'item', 'harbor'));
+
+        $getItem = Item::findOrFail($import->id);
+        $getCountry = Country::findOrFail($import->id);
+        $getHarbor = Harbor::findOrFail($import->id);
+        return view('imports.edit', compact('import', 'country', 'item', 'harbor', 'getItem', 'getCountry', 'getHarbor'));
     }
 
     /**
@@ -87,6 +91,8 @@ class ImportsController extends Controller
     {
         $import = Import::findOrFail($id);
         $import->update($request->all());
+
+        $item = Item::findOrFail($import->id);
 
         Session::flash('message', 'Data Import berhasil di rubah!');
         return redirect('imports');
