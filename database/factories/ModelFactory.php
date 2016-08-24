@@ -19,3 +19,18 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Harbor::class, function (Faker\Generator $faker) {
+    return [
+        'pod' => $faker->numerify('#####'),
+        'podname' => $faker->name,
+    ];
+});
+
+$factory->define(App\Item::class, function (Faker\Generator $faker) {
+    return [
+        'hsxcode' => $faker->numerify('##########'),
+        'desc' => $faker->name,
+        'sitc8code' => $faker->numerify('########'),
+    ];
+});
