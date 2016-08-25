@@ -97,8 +97,8 @@
 						<td>{{ strtoupper($country->ctrydescen) }}</td>
 						<td>{{ strtoupper($harbor->pod) }}</td>
 						<td>{{ strtoupper($harbor->podname) }}</td>
-						<td>{{ strtoupper($export->netwt) }}</td>
-						<td>{{ strtoupper($export->value) }}</td>
+						<td>{{ number_format($export->netwt, 0) }}</td>
+						<td>{{ number_format($export->value, 0) }}</td>
 						<td class="col-md-1" align="right">
 							<a href="/exports/{{$export->id}}/edit" class="btn btn-xs btn-info">Edit</a> 
 						</td>

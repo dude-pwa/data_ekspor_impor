@@ -15,12 +15,12 @@
 	{!! Form::select('harbor_id', $harbor, null, array('class' => 'form-control')) !!}
 </div><br>
 <div class="input-group">
-	{!! Form::label('netwt', 'Berat Bersih: ', ['class'=>'input-group-addon bold']) !!}
-	{!! Form::text('netwt', null, ['class' => 'form-control']) !!}
+	{!! Form::label('netwt', 'Berat Bersih (Kg): ', ['class'=>'input-group-addon bold']) !!}
+	{!! Form::number('netwt', null, ['class' => 'form-control']) !!}
 </div> <br>
 <div class="input-group">
 	{!! Form::label('value', 'Value: ', ['class'=>'input-group-addon bold']) !!}
-	{!! Form::text('value', null, ['class' => 'form-control']) !!}
+	{!! Form::number('value', null, ['class' => 'form-control']) !!}
 </div> <br>
 <div class="input-group pull-right">
 	<a href="{{ redirect()->getUrlGenerator()->previous() }}" class="btn btn-default">Back</a> &nbsp;&nbsp;&nbsp;

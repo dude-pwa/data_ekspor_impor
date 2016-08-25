@@ -96,8 +96,8 @@
 						<td>{{ strtoupper($country->ctrydescen) }}</td>
 						<td>{{ strtoupper($harbor->pod) }}</td>
 						<td>{{ strtoupper($harbor->podname) }}</td>
-						<td>{{ strtoupper($import->netwt) }}</td>
-						<td>{{ strtoupper($import->value) }}</td>
+						<td>{{ number_format($import->netwt) }}</td>
+						<td>{{ number_format($import->value) }}</td>
 						<td class="col-md-1" align="right">
 							<a href="/imports/{{$import->id}}/edit" class="btn btn-xs btn-info">Edit</a> 
 						</td>
