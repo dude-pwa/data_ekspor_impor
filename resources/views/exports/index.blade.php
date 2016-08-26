@@ -104,7 +104,7 @@
 						<td class="col-md-1" align="right">
 							<a href="/exports/{{$export->id}}/edit" class="btn btn-xs btn-info">Edit</a> 
 						</td>
-						<td class="col-md-1" align="left">
+						<td class="col-md-1 delete" align="left">
 							{!! Form::open(['method'=>'delete', 'route'=>['exports.destroy', $export->id]]) !!}
 							{!! Form::submit('Delete', ['class'=>'btn btn-xs btn-danger']) !!}
 							{!!Form::close()!!}

@@ -22,7 +22,7 @@
 						<td class="col-md-1" align="right">
 							<a href="/items/{{$item->id}}/edit" class="btn btn-xs btn-info">Edit</a> 
 						</td>
-						<td class="col-md-1" align="left">
+						<td class="col-md-1 delete" align="left">
 							{!! Form::open(['method'=>'delete', 'route'=>['items.destroy', $item->id]]) !!}
 							{!! Form::submit('Delete', ['class'=>'btn btn-xs btn-danger']) !!}
 							{!!Form::close()!!}

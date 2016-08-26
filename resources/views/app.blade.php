@@ -54,6 +54,9 @@
 	
 	<script>
 		$('div.alert').delay(3000).slideUp(300);
-	</script>
+    $(".delete").on("submit", function(){
+        return confirm("Are you sure?");
+    });
+</script>
 </body>
 </html>
