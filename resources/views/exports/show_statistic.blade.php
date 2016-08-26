@@ -3,7 +3,10 @@
 @section('content')
 	<div class="panel panel-success">
 		<div class="panel-heading">
-			<h1>Daftar Export dari </h1>
+			<?php
+				$negara = \App\Country::findOrFail($country);
+			?>
+			<h1>Daftar Export Negara {{strtoupper($negara->ctrydescen)}}</h1>
 			<div class="row">
 				<a class="btn btn-primary pull-right" href="/exports/statistic">Kembali</a>
 			</div>

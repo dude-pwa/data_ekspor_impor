@@ -52,7 +52,7 @@ class ExportsController extends Controller
         $exports = Export::orderBy('date', 'desc')
             ->where(['country_id'=>$country]);
         $exports = $exports->paginate();
-        return view('exports.show_statistic', compact('exports'));
+        return view('exports.show_statistic', compact('exports', 'country'));
     }
 
     /**
