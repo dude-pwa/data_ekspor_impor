@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/exports/statistic', 'ExportsController@statistic');
+
+Route::get('exports/{country}', 'ExportsController@countryStats');
+
 Route::resource('countries', 'CountriesController');
 Route::resource('harbor', 'HarborsController');
 Route::resource('items', 'ItemsController');
@@ -30,3 +34,4 @@ Route::get('/imports?sort={sort}', [
 	'uses'=>'ImportsController@index',
 	'as'=>'sort_imports'
 ]);
+

@@ -62,6 +62,8 @@
 			</p>
 
 			{{-- end fungsi sort --}}
+			<br>
+			<a class="btn btn-default pull-right" href="/exports/statistic">Lihat Negara Pengekspor Terbanyak</a>
 		</div>
 	</div>
 		<table class="table table-striped">

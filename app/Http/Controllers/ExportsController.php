@@ -37,6 +37,24 @@ class ExportsController extends Controller
         return view('exports.index', compact('exports'));
     }
 
+    public function statistic(){
+        $countriesGroup = \DB::table('exports')
+            ->select('country_id', \DB::raw('count(*) as total'))
+            ->groupBy('country_id')
+            ->orderBy('total', 'desc')
+            ->get();
+        $exports = Export::orderBy(
+            'harbor_id', 'asc')->get();
+        return view('exports.statistic', compact('countriesGroup', 'exports'));
+    }
+
+    public function countryStats($country){
+        $exports = Export::orderBy('date', 'desc')
+            ->where(['country_id'=>$country]);
+        $exports = $exports->paginate();
+        return view('exports.show_statistic', compact('exports'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
