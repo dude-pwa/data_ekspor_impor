@@ -37,6 +37,24 @@ class ImportsController extends Controller
         return view('imports.index', compact('imports'));
     }
 
+    public function statistic(){
+        $countriesGroup = \DB::table('imports')
+            ->select('country_id', \DB::raw('count(*) as total'))
+            ->groupBy('country_id')
+            ->orderBy('total', 'desc')
+            ->get();
+        $imports = Import::orderBy(
+            'harbor_id', 'asc')->get();
+        return view('imports.statistic', compact('countriesGroup', 'imports'));
+    }
+
+    public function countryStats($country){
+        $imports = Import::orderBy('date', 'desc')
+            ->where(['country_id'=>$country]);
+        $imports = $imports->paginate();
+        return view('imports.show_statistic', compact('imports', 'country'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

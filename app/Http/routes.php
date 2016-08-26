@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Route::get('/exports/statistic', 'ExportsController@statistic');
 
+Route::get('/imports/statistic', 'ImportsController@statistic');
+
 Route::get('exports/{country}', 'ExportsController@countryStats');
+
+Route::get('imports/{country}', 'ImportsController@countryStats');
 
 Route::resource('countries', 'CountriesController');
 Route::resource('harbor', 'HarborsController');

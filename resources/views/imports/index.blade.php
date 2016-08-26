@@ -61,6 +61,8 @@
 			</p>
 
 			{{-- end fungsi sort --}}
+			<br>
+			<a class="btn btn-default pull-right" href="/imports/statistic">Lihat Negara Pengimpor Terbanyak</a>
 			</div>
 		</div>
 		<table class="table table-striped">
