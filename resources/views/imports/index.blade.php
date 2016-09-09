@@ -120,7 +120,7 @@
 		</div>
 	</div>
 	<br>
-	<a href="/imports/create" class="btn btn-primary">Tambah Daftar Export</a>
+	<a href="/imports/create" class="btn btn-primary">Tambah Daftar Import</a>
 	<br><br>
 @endsection
 

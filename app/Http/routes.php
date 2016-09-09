@@ -15,19 +15,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/exports/statistic', 'ExportsController@statistic');
 
-Route::get('/imports/statistic', 'ImportsController@statistic');
-
-Route::get('exports/{country}', 'ExportsController@countryStats');
-
-Route::get('imports/{country}', 'ImportsController@countryStats');
 
 Route::resource('countries', 'CountriesController');
 Route::resource('harbor', 'HarborsController');
 Route::resource('items', 'ItemsController');
-Route::resource('exports', 'ExportsController');
-Route::resource('imports', 'ImportsController');
+
+// resource exports
+Route::get('/exports', 'ExportsController@index');
+Route::get('/exports/create', 'ExportsController@create');
+Route::get('/exports/{id}/edit', 'ExportsController@edit');
+Route::post('/exports', 'ExportsController@store');
+Route::patch('/exports/{id}', 'ExportsController@update');
+Route::delete('/exports/{id}', [
+	'uses'=>'ExportsController@destroy',
+	'as'=>'exports.destroy'
+]);
+
+// resource imports
+Route::get('/imports', 'ImportsController@index');
+Route::get('/imports/create', 'ImportsController@create');
+Route::get('/imports/{id}/edit', 'ImportsController@edit');
+Route::post('/imports', 'ImportsController@store');
+Route::patch('/imports/{id}', 'ImportsController@update');
+Route::delete('/imports/{id}', [
+	'uses'=>'ImportsController@destroy',
+	'as'=>'imports.destroy'
+]);
+
 
 Route::get('/exports?sort={sort}', [
 	'uses'=>'ExportsController@index',
@@ -39,3 +54,10 @@ Route::get('/imports?sort={sort}', [
 	'as'=>'sort_imports'
 ]);
 
+Route::get('/exports/statistic', 'ExportsController@statistic');
+
+Route::get('/imports/statistic', 'ImportsController@statistic');
+
+Route::get('exports/{country}', 'ExportsController@countryStats');
+
+Route::get('imports/{country}', 'ImportsController@countryStats');
