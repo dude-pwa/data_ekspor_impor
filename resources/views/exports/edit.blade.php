@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="panel panel-success">
-		<h1 class="panel-heading">Edit {{$export->id}} ({{$export->date}}) </h1>
+		<h1 class="panel-heading">Edit Data Export ({{date('F d, Y', strtotime($export->date))}}) </h1>
 		<div class="panel-form panel-content">
 
 			<h3>Item: {{$getItem->desc}}</h3>
