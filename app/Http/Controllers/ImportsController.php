@@ -106,9 +106,9 @@ class ImportsController extends Controller
         $item = Item::orderBy('desc')->lists('desc', 'id');
         $harbor = Harbor::orderBy('podname')->lists('podname', 'id');
 
-        $getItem = Item::findOrFail($import->id);
-        $getCountry = Country::findOrFail($import->id);
-        $getHarbor = Harbor::findOrFail($import->id);
+        $getItem = Item::findOrFail($import->item_id);
+        $getCountry = Country::findOrFail($import->country_id);
+        $getHarbor = Harbor::findOrFail($import->harbor_id);
         return view('imports.edit', compact('import', 'country', 'item', 'harbor', 'getItem', 'getCountry', 'getHarbor'));
     }
 

@@ -106,9 +106,9 @@ class ExportsController extends Controller
         $item = Item::orderBy('desc')->lists('desc', 'id');
         $harbor = Harbor::orderBy('podname')->lists('podname', 'id');
 
-        $getItem = Item::findOrFail($export->id);
-        $getCountry = Country::findOrFail($export->id);
-        $getHarbor = Harbor::findOrFail($export->id);
+        $getItem = Item::findOrFail($export->item_id);
+        $getCountry = Country::findOrFail($export->country_id);
+        $getHarbor = Harbor::findOrFail($export->harbor_id);
         return view('exports.edit', compact('export', 'country', 'item', 'harbor', 'getItem', 'getCountry', 'getHarbor'));
     }
 
