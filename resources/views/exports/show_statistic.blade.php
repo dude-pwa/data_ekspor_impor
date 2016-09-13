@@ -15,7 +15,7 @@
 		<table class="table table-striped">
 			<tr>
 				<th class="col-md-1">No.</th>
-				<th class="col-md-1">Date</th>
+				<th class="col-md-1">Year</th>
 				<th class="col-md-2">Kode HS</th>
 				<th class="col-md-2">Deskripsi Kode HS</th>
 				<th class="col-md-2">Kode SITC8</th>
@@ -37,7 +37,7 @@
 					?>
 					<tr class="small">
 						<td>{{$i}}</td>
-						<td>{{ strtoupper(date('F d, Y', strtotime($export->date))) }}</td>
+						<td>{{ strtoupper(date('Y', strtotime($export->date))) }}</td>
 						<td>{{ strtoupper($item->hsxcode) }}</td>
 						<td>{{ strtoupper($item->desc) }}</td>
 						<td>{{ strtoupper($item->sitc8code) }}</td>
