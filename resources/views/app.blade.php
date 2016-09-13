@@ -49,6 +49,8 @@
 				{{Session::get('message')}}
 			</div>
 		@endif
+
+		<img src="{{URL::to('/src/images/logo.png')}}" alt="" class="logo">
 		@yield('content')
 	</div>
 	
