@@ -81,8 +81,7 @@
 				<th class="col-md-3">Value</th>
 				<th colspan="2" class="center">Action</th>
 			</tr>
-			<?php $i = 1; ?>
-			@while($i <= $exports->count())
+			<?php $i = 0; ?>
 				@foreach($exports as $export)
 					<?php
 						$item = $export->item()->first();
@@ -90,7 +89,7 @@
 						$harbor = $export->harbor()->first();
 					?>
 					<tr class="small">
-						<td>{{$i}}</td>
+						<td>{{($exports->currentpage()-1)*$exports->perpage()+1 + $i}}</td>
 						<td>{{ strtoupper(date('Y', strtotime($export->date))) }}</td>
 						<td>{{ strtoupper($item->hsxcode) }}</td>
 						<td>{{ strtoupper($item->desc) }}</td>
@@ -112,7 +111,6 @@
 					</tr>
 				<?php $i += 1 ?>
 				@endforeach
-			@endwhile
 		</table>
 
 		<br>

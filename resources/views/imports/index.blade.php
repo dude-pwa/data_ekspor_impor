@@ -80,8 +80,7 @@
 				<th class="col-md-3">Value</th>
 				<th colspan="2" class="center">Action</th>
 			</tr>
-			<?php $i = 1; ?>
-			@while($i <= $imports->count())
+			<?php $i = 0; ?>
 				@foreach($imports as $import)
 					<?php
 						$item = $import->item()->first();
@@ -89,7 +88,7 @@
 						$harbor = $import->harbor()->first();
 					?>
 					<tr class="small">
-						<td>{{$i}}</td>
+						<td>{{($imports->currentpage()-1)*$imports->perpage()+1 + $i}}</td>
 						<td>{{ strtoupper(date('Y', strtotime($import->date))) }}</td>
 						<td>{{ strtoupper($item->hsxcode) }}</td>
 						<td>{{ strtoupper($item->desc) }}</td>
@@ -111,7 +110,6 @@
 					</tr>
 				<?php $i += 1 ?>
 				@endforeach
-			@endwhile
 		</table>
 
 		<br>
