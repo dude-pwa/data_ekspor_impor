@@ -47,7 +47,10 @@
 			</div>
 		@endif
 
-		<img src="{{URL::to('/src/images/logo.png')}}" alt="" class="logo">
+		@if (!Auth::guest())
+			<img src="{{URL::to('/src/images/logo.png')}}" alt="" class="logo">
+		@endif
+
 		@yield('content')
 	</div>
 	

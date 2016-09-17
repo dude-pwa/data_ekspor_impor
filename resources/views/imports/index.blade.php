@@ -3,7 +3,7 @@
 @section('content')
 	<div class="panel panel-success">
 		<div class="panel-heading">
-			<h1>Daftar Import</h1>
+			<h1>Daftar Komoditi Import Berdasarkan per HS</h1>
 
 			<div class="row">
 				{{-- start fungsi sort --}}

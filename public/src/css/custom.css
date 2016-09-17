@@ -122,6 +122,18 @@
   padding-bottom: 50px;
 }
 
+.panel-transparent {
+  background: none;
+}
+
+/*.panel-transparent .panel-heading{
+    background: rgba(122, 130, 136, 0.2)!important;
+}*/
+
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.2)!important;
+}
+
 .bold{
   font-weight: bold; 
 }
