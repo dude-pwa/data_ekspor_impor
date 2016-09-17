@@ -83,13 +83,16 @@
             </div>
         </div>
         @else
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading"><h1>Welcome</h1></div>
+        <div class="col-md-10 col-md-offset-4">
+            <br>
+            <h1><a href="/exports" class="btn btn-primary col-md-5">Daftar Komoditi Export Berdasarkan Per HS</a></h1><br>
+            <h1><a href="/imports" class="btn btn-primary col-md-5">Daftar Komoditi Import Berdasarkan Per HS</a></h1><br>
+            <h1><a href="/countries" class="btn btn-primary col-md-5">Daftar Negara</a></h1><br>
+            <h1><a href="/harbor" class="btn btn-primary col-md-5">Daftar Pelabuhan</a></h1><br>
+            <h1><a href="/items" class="btn btn-primary col-md-5">Daftar Item</a></h1><br>
 
-                {{-- <div class="panel-body">
-                </div> --}}
-            </div>
+            <br><br>
+            <h1><a href="{{ url('/logout') }}" class="col-md-1 col-md-offset-4 btn btn-danger "><i class="fa fa-btn fa-sign-out"></i>Exit</a></h1>
         </div>
         @endif
     </div>

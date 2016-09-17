@@ -8,7 +8,7 @@
 	<script src="{{URL::to('/src/js/bootstrap.min.js')}}"></script>
 	<script src="{{URL::to('/src/js/jquery-3.1.0.min.js')}}"></script>
 
-	<div class="navbar navbar-default navbar-static-top">
+	{{-- <div class="navbar navbar-default navbar-static-top">
 	  <div class="container">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 	      <span class="icon-bar"></span>
@@ -36,7 +36,7 @@
 	      </ul>
 	    </div>
 	  </div>
-	</div>
+	</div> --}}
 
 </head>
 <body>
@@ -48,7 +48,8 @@
 		@endif
 
 		@if (!Auth::guest())
-			<img src="{{URL::to('/src/images/logo.png')}}" alt="" class="logo">
+			<br>
+			<center><img src="{{URL::to('/src/images/logo.png')}}" alt="" class="logo"></center>
 		@endif
 
 		@yield('content')

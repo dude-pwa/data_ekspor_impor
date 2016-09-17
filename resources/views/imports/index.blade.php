@@ -1,6 +1,9 @@
 @extends('app')
 
 @section('content')
+	<a href="/imports/create" class="btn btn-primary">Tambah Daftar Import</a>
+	<br><br>
+	<a href="/" class="btn btn-warning">Kembali Ke Menu Utama</a>
 	<div class="panel panel-success">
 		<div class="panel-heading">
 			<h1>Daftar Komoditi Import Berdasarkan per HS</h1>
@@ -12,12 +15,12 @@
 
 				<select id="sort">
 					<option disabled selected> -- select an option -- </option>
-					<option value="{{route('sort_exports', ['sort'=>'date_desc'])}}">Tanggal (Terbaru)</option>
-					<option value="{{route('sort_exports', ['sort'=>'date_asc'])}}">Tanggal (Terlama)</option>
-					<option value="{{route('sort_exports', ['sort'=>'netwt_asc'])}}">Berat Bersih (Terkecil)</option>
-					<option value="{{route('sort_exports', ['sort'=>'netwt_desc'])}}">Berat Bersih (Terbesar)</option>
-					<option value="{{route('sort_exports', ['sort'=>'value_asc'])}}">Value (Terkecil)</option>
-					<option value="{{route('sort_exports', ['sort'=>'value_desc'])}}">Value (Terbesar)</option>
+					<option value="{{route('sort_imports', ['sort'=>'date_desc'])}}">Tanggal (Terbaru)</option>
+					<option value="{{route('sort_imports', ['sort'=>'date_asc'])}}">Tanggal (Terlama)</option>
+					<option value="{{route('sort_imports', ['sort'=>'netwt_asc'])}}">Berat Bersih (Terkecil)</option>
+					<option value="{{route('sort_imports', ['sort'=>'netwt_desc'])}}">Berat Bersih (Terbesar)</option>
+					<option value="{{route('sort_imports', ['sort'=>'value_asc'])}}">Value (Terkecil)</option>
+					<option value="{{route('sort_imports', ['sort'=>'value_desc'])}}">Value (Terbesar)</option>
 				</select>
 				
 				<script type="text/javascript">
@@ -118,7 +121,6 @@
 		</div>
 	</div>
 	<br>
-	<a href="/imports/create" class="btn btn-primary">Tambah Daftar Import</a>
-	<br><br>
+	
 @endsection
 

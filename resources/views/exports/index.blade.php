@@ -1,6 +1,9 @@
 @extends('app')
 
 @section('content')
+	<a href="/exports/create" class="btn btn-primary">Tambah Daftar Export</a>
+	<br><br>
+	<a href="/" class="btn btn-warning">Kembali Ke Menu Utama</a>
 	<div class="panel panel-success">
 	<div class="panel-heading">
 		<h1>Daftar Komoditi Export Berdasarkan per HS</h1>
@@ -119,7 +122,6 @@
 		</div>
 	</div>
 	<br>
-	<a href="/exports/create" class="btn btn-primary">Tambah Daftar Export</a>
-	<br><br>
+
 @endsection
 

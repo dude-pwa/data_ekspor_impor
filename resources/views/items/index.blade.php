@@ -1,6 +1,9 @@
 @extends('app')
 
 @section('content')
+	<a href="/items/create" class="btn btn-primary">Tambah Daftar Item</a>
+	<br><br>
+	<a href="/" class="btn btn-warning">Kembali Ke Menu Utama</a>
 	<div class="panel panel-success">
 		<h1 class="panel-heading">Daftar Item</h1>
 		<table class="table table-striped">
@@ -11,11 +14,10 @@
 				<th class="col-md-3">Kode SITC 8 Digit</th>
 				<th colspan="2" class="center">Action</th>
 			</tr>
-			<?php $i = 1; ?>
-			@while($i <= $items->count())
+			<?php $i = 0; ?>
 				@foreach($items as $item)
 					<tr>
-						<td>{{$i}}</td>
+						<td>{{($items->currentpage()-1)*$items->perpage()+1 + $i}}</td>
 						<td>{{ strtoupper($item->hsxcode) }}</td>
 						<td>{{ strtoupper($item->desc) }}</td>
 						<td>{{ strtoupper($item->sitc8code) }}</td>
@@ -30,7 +32,6 @@
 					</tr>
 				<?php $i += 1 ?>
 				@endforeach
-			@endwhile
 		</table>
 
 		<br>
@@ -39,7 +40,6 @@
 		</div>
 	</div>
 	<br>
-	<a href="/items/create" class="btn btn-primary">Tambah Daftar Item</a>
-	<br><br>
+
 @endsection
 

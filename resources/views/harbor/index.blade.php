@@ -1,6 +1,9 @@
 @extends('app')
 
 @section('content')
+	<a href="/harbor/create" class="btn btn-primary">Tambah Daftar Pelabuhan</a>
+	<br><br>
+	<a href="/" class="btn btn-warning">Kembali Ke Menu Utama</a>
 	<div class="panel panel-success">
 		<h1 class="panel-heading">Daftar Pelabuhan</h1>
 		<table class="table table-striped">
@@ -10,11 +13,10 @@
 				<th class="col-md-3">Nama Pelabuhan</th>
 				<th colspan="2" class="center">Action</th>
 			</tr>
-			<?php $i = 1; ?>
-			@while($i <= $harbors->count())
+			<?php $i = 0; ?>
 				@foreach($harbors as $harbor)
 					<tr>
-						<td>{{$i}}</td>
+						<td>{{($harbors->currentpage()-1)*$harbors->perpage()+1 + $i}}</td>
 						<td>{{ strtoupper($harbor->pod) }}</td>
 						<td>{{ strtoupper($harbor->podname) }}</td>
 						<td class="col-md-1" align="right">
@@ -28,7 +30,6 @@
 					</tr>
 				<?php $i += 1 ?>
 				@endforeach
-			@endwhile
 		</table>
 
 		<br>
@@ -37,7 +38,6 @@
 		</div>
 	</div>
 	<br>
-	<a href="/harbor/create" class="btn btn-primary">Tambah Daftar Pelabuhan</a>
-	<br><br>
+
 @endsection
 

@@ -1,6 +1,9 @@
 @extends('app')
 
 @section('content')
+	<a href="/countries/create" class="btn btn-primary">Tambah Daftar Negara</a>
+	<br><br>
+	<a href="/" class="btn btn-warning">Kembali Ke Menu Utama</a>
 	<div class="panel panel-success">
 		<h1 class="panel-heading">Daftar Negara</h1>
 		<table class="table table-striped">
@@ -10,11 +13,10 @@
 				<th class="col-md-3">Nama Negara</th>
 				<th colspan="2" class="center">Action</th>
 			</tr>
-			<?php $i = 1; ?>
-			@while($i <= $countries->count())
+			<?php $i = 0; ?>
 				@foreach($countries as $country)
 					<tr>
-						<td>{{$i}}</td>
+						<td>{{($countries->currentpage()-1)*$countries->perpage()+1 + $i}}</td>
 						<td>{{ strtoupper($country->destctry) }}</td>
 						<td>{{ strtoupper($country->ctrydescen) }}</td>
 						<td class="col-md-1" align="right">
@@ -28,7 +30,6 @@
 					</tr>
 				<?php $i += 1 ?>
 				@endforeach
-			@endwhile
 		</table>
 
 		<br>
@@ -37,7 +38,6 @@
 		</div>
 	</div>
 	<br>
-	<a href="/countries/create" class="btn btn-primary">Tambah Daftar Negara</a>
-	<br><br>
+
 @endsection
 
