@@ -63,12 +63,12 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-3">
+                            <div class="col-md-7 col-md-offset-3">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
-                                {{-- <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a> --}}
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Klik disini jika lupa password</a>
                             </div>
                         </div>
                         </td>

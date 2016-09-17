@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('app')
 
 <!-- Main Content -->
 @section('content')
@@ -39,6 +39,8 @@
                             </div>
                         </div>
                     </form>
+                    <a href="/" class="btn btn-warning col-md-offset-9">Kembali Ke Menu Utama</a>
+
                 </div>
             </div>
         </div>
