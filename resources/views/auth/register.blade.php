@@ -1,12 +1,12 @@
 @extends('app')
 
 @section('content')
-<style>
+{{-- <style>
     body{
         background: url('/src/images/bg.jpg') no-repeat;
         background-size: cover;
     }
-</style>
+</style> --}}
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
