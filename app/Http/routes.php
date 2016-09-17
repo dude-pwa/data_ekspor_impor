@@ -61,3 +61,7 @@ Route::get('/imports/statistic', 'ImportsController@statistic');
 Route::get('exports/{country}', 'ExportsController@countryStats');
 
 Route::get('imports/{country}', 'ImportsController@countryStats');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

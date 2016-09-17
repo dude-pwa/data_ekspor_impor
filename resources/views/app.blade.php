@@ -23,19 +23,16 @@
 	        <li><a href="/items">Daftar Item</a></li>
 	        <li><a href="/exports">Daftar Export</a></li>
 	        <li><a href="/imports">Daftar Import</a></li>
-	        <li class="dropdown">
-	          {{-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <% if coach_signed_in? %>
-	              <li>
-	              <%= link_to('Logout', destroy_coach_session_path, :method => :delete) %>        
-	              </li>
-	            <% else %>
-	              <li><%= link_to 'Signup', new_coach_registration_path %></li>
-	              <li><%= link_to 'Login', new_coach_session_path %></li>
-	            <% end %>
-	          </ul> --}}
-	        </li>
+	      </ul>
+	      <!-- Right Side Of Navbar -->
+	      <ul class="nav navbar-nav navbar-right">
+	          <!-- Authentication Links -->
+          @if (Auth::guest())
+              <li><a href="{{ url('/login') }}">Login</a></li>
+              <li><a href="{{ url('/register') }}">Register</a></li>
+          @else
+              <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+          @endif
 	      </ul>
 	    </div>
 	  </div>

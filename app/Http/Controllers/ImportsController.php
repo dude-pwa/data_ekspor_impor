@@ -13,6 +13,10 @@ use Session;
 
 class ImportsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request)
     {
         // $item = Item::all();
